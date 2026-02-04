@@ -1,10 +1,15 @@
 # EXP-03-Implement-Breadth-First-Search-Traversal-of-a-Graph
-Breadth First Search Traversal of a Graph
 
 
-AIM: 
-Theory: 
+<h3>Name: YASHISH.K </h3>
+<h3>Register Number: 212224050061</h3>
+
+**AIM:**
+
+ 
 To Implement Breadth First Search Traversal of a Graph using Python 3. 
+
+**THEORY:**
 
 Breadth-First Traversal (or Search) for a graph is like the Breadth-First Traversal of a tree. 
 The only catch here is that, unlike trees, graphs may contain cycles so that we may come to the same 
@@ -62,6 +67,8 @@ As we can see that every neighbours of node 4 are visited, so move to the next n
 front of the queue. 
 Remove node 4 from the front of queue and visit the unvisited neighbours and push them into queue. 
 Now, Queue becomes empty, So, terminate these process of iteration. 
+
+
 Algorithm: 
 1. Construct a Graph with Nodes and Edges 
 2. Breadth First Uses Queue and iterates through the Queue for Traversal. 
@@ -69,56 +76,63 @@ Algorithm:
 4. Find its Successors Or neighbors and Check whether the node is visited or not. 
 5. If Not Visited, add it to the Queue. Else Continue. 
 6. Iterate steps 4 and 5 until all nodes get visited, and there are no more unvisited nodes. 
-Program: 
-from collections import deque 
-from collections import defaultdict 
-''' 
-V E 
-FOR EVERY EDGE 
-U V 
-7 9 
-A B 
-A C  
-A F 
-C E 
-C F 
-C D 
-D E  
-D G 
-G F 
-''' 
-def bfs(graph,start,visited,path): 
-queue = deque() 
-path.append(start) 
-queue.append(start) 
-visited[start] = True 
-while len(queue) != 0: 
-tmpnode = queue.popleft() 
-for neighbour in graph[tmpnode]: 
-if visited[neighbour] == False: 
-path.append(neighbour) 
-queue.append(neighbour) 
-visited[neighbour] = True 
-return path 
-graph = defaultdict(list) 
-v,e = map(int,input().split()) 
-for i in range(e): 
-u,v = map(str,input().split()) 
-graph[u].append(v) 
-graph[v].append(u) 
-start = '0' 
-#start=’A’ 
-path = [] 
-visited = defaultdict(bool) 
-traversedpath = bfs(graph,start,visited,path) 
-print(traversedpath) 
-Sample Input : 
-5 6 
-0 1 
-0 2 
-1 2 
-1 3 
-2 4 
-3 4 
-Sample Output: 
-['0', '1', '2', '3', '4'] 
+
+
+**Program:** 
+
+
+<img width="635" height="771" alt="image" src="https://github.com/user-attachments/assets/2b16520f-241b-4ec1-a048-fbbb07399581" />
+
+
+<hr>
+<h3>Sample Input</h3>
+<hr>
+7 9 <BR>
+A B <BR>
+A C <BR>
+A F <BR>
+C E <BR>
+C F <BR>
+C D <BR>
+D E <BR>
+D G <BR>
+G F <BR>
+<hr>
+<h3>Sample Output</h3>
+<hr>
+['A', 'B', 'C', 'F', 'E', 'D', 'G']
+
+<hr>
+
+**OUTPUT:**
+
+
+<img width="395" height="246" alt="image" src="https://github.com/user-attachments/assets/5025447b-ab1e-4be8-a594-b154fb890ac2" />
+
+
+
+<hr>
+<h3>Sample Input</h3>
+<hr>
+5 6 <BR>
+0 1 <BR>
+0 2 <BR>
+1 2 <BR>
+1 3 <BR>
+2 4 <BR>
+3 4 <BR>
+<hr>
+<h3>Sample Output</h3>
+<hr>
+['0', '1', '2', '3', '4']
+<hr>
+
+**OUTPUT:**
+
+<img width="424" height="180" alt="image" src="https://github.com/user-attachments/assets/4f3a35cd-9a2a-4370-93e8-73e5f7ebd7cd" />
+
+Result:
+
+
+Thus,a Graph was constructed and implementation of Breadth First Search for the same graph was done successfully.
+
